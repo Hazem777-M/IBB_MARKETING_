@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Options</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #2c3e50;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      margin-top: 50px;
+      max-width: 900px;
+   /*   background-color: #333;*/
+    }
+
+    .payment-section {
+      padding: 25px;
+      background: #007bff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      color: #333;
+    }
+
+    .payment-option {
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      background: #f9f9f9;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-option:hover {
+      background: #e6f3ff;
+      border-color: #007bff;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-option img {
+      max-width: 80px;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+      
+    }
+
+    .payment-option:hover img {
+      transform: scale(1.2);
+    }
+
+    .payment-category-btn {
+      margin: 10px;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .payment-category-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    #international-payments,
+    #local-payments {
+      display: none;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .payment-option p {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="title">حدد طريقة الدفع</h2>
+    
+    <div class="text-center">
+      <button class="payment-category-btn" onclick="showPayments('local')">دفع محلي</button>
+      <button class="payment-category-btn" onclick="showPayments('international')">دفع دولي</button>
+    </div>
+
+    <div id="local-payments" class="payment-section">
+      <h4 class="mb-4 text-center">طرق الدفع المحلية</h4>
+      <div class="row mb-5">
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('ون كاش')">
+            <img src="./images/Onekash.jpg" alt="ون كاش">
+            <p class="mb-0">ون كاش</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('الكريمي')">
+            <img src="./images/KuraimiBank.png" alt="الكريمي">
+            <p class="mb-0">الكريمي</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('موبايل موني')">
+            <img src="./images/mopilemoney.jfif" alt="موبايل موني">
+            <p class="mb-0">موبايل موني</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('النجم')">
+            <img src="./images/alnajm-01.png" alt="النجم">
+            <p class="mb-0">النجم</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="international-payments" class="payment-section">
+      <h4 class="mb-4 text-center">طرق الدفع الدولية</h4>
+      <div class="row mb-5">
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('PayPal')">
+            <img src="./images/png-clipart-logo-paypal-graphics-product-computer-icons-paypal-blue-angle-thumbnail.png" alt="PayPal">
+            <p class="mb-0">PayPal</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('Visa')">
+            <img src="./images/visa-logo-png-transparent.png" alt="Visa">
+            <p class="mb-0">Visa</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('MasterCard')">
+            <img src="./images/png-clipart-logo-mastercard-pentagram-flat-design-brand-mastercard-text-trademark.png" alt="MasterCard">
+            <p class="mb-0">MasterCard</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="payment-option" onclick="selectPayment('Western_Union')">
+            <img src="./images/asteruninon.png" alt="Western_Union">
+            <p class="mb-0">Western Union</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form id="paymentForm" style="display: none;">
+      <div class="mb-3">
+        <label for="paymentCompany" class="form-label">طريقة الدفع المحددة</label>
+        <input type="text" id="paymentCompany" class="form-control" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="customerName" class="form-label">إسم الزبون</label>
+        <input type="text" id="customerName" class="form-control" placeholder="Enter your name" required >
+      </div>
+      <div class="mb-3">
+        <label for="customerPhone" class="form-label">رقم التلفون</label>
+        <input type="text" id="customerPhone" class="form-control" placeholder="Enter your phone number" required>
+      </div>
+      <div class="mb-3">
+        <label for="productName" class="form-label">إسم المنتج</label>
+        <input type="text" id="productName" class="form-control" placeholder="Name of Product" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="productPrice" class="form-label">السعر للدفع</label>
+        <input type="text" id="productPrice" class="form-control" placeholder="Enter amount" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="currency" class="form-label">اختر العملة</label>
+      <select id="currency" class="form-select" onchange="convertCurrency()">
+          <option value="USD" selected>دولار أمريكي</option>
+          <option value="YER">ريال يمني</option>
+      </select>
+  </div>
+  <div class="mb-3">
+      <label for="convertedPrice" class="form-label">السعر بعد التحويل</label>
+      <input type="text" id="convertedPrice" class="form-control" placeholder="Converted Price" readonly>
+  </div>
+      
+      <button type="submit" class="btn btn-primary w-100">عملية الدفع</button>
+      <p class="mb-0 mt-4 text-center"><a href="../index1.html"
+        class="link">العودة للصفحة الرئيسية</a></p>
+    </form>
+  </div>
+
+  <script>
+    function showPayments(type) {
+      if (type === 'local') {
+        document.getElementById('local-payments').style.display = 'block';
+        document.getElementById('international-payments').style.display = 'none';
+      } else {
+        document.getElementById('local-payments').style.display = 'none';
+        document.getElementById('international-payments').style.display = 'block';
+      }
+    }
+
+    function selectPayment(company) {
+      document.getElementById('paymentCompany').value = company;
+      document.getElementById('paymentForm').style.display = 'block';
+      window.scrollTo(0, document.getElementById('paymentForm').offsetTop);
+    }
+
+    // --------------- -- for recive price & Name of product --------------------
+    window.onload = function() {
+      const productData = JSON.parse(localStorage.getItem('selectedProduct'));
+      if (productData) {
+          document.getElementById('productName').value = productData.title; // اسم المنتج
+          document.getElementById('productPrice').value = productData.price; // السعر
+      } else {
+          alert('لم يتم تحديد منتج.');
+      }
+  };
+
+   // Exchange ------------- Dolare to Real and Opsite ---------------
+ // سعر الصرف الحالي (يمكن تحديثه من مصدر موثوق)
+const exchangeRate = 250; // 1 دولار = 250 ريال يمني
+
+// تحويل العملة بناءً على الاختيار
+function convertCurrency() {
+    const currency = document.getElementById('currency').value; // العملة المختارة
+    const originalPrice = parseFloat(document.getElementById('productPrice').value); // السعر الأصلي بالدولار
+
+    let convertedPrice;
+    if (currency === 'YER') {
+        // تحويل السعر من دولار أمريكي إلى ريال يمني
+        convertedPrice = (originalPrice * exchangeRate).toFixed(2);
+        document.getElementById('convertedPrice').value = `${convertedPrice} YER`; // تحديث الحقل بالريال
+    } else {
+        // إذا كانت العملة هي دولار أمريكي، عرض السعر الأصلي
+        document.getElementById('convertedPrice').value = `${originalPrice.toFixed(2)} USD`;
+    }
+}
+
+// تحميل البيانات عند فتح الصفحة
+window.onload = function () {
+    // استرداد بيانات المنتج من localStorage
+    const productData = JSON.parse(localStorage.getItem('selectedProduct'));
+    if (productData) {
+        document.getElementById('productName').value = productData.title; // اسم المنتج
+        document.getElementById('productPrice').value = productData.price.replace('$', ''); // السعر الأساسي بالدولار
+        convertCurrency(); // تحديث السعر افتراضيًا
+    } else {
+        alert('لم يتم تحديد منتج.'); // تنبيه إذا لم يتم تحديد المنتج
+    }
+
+    // إضافة مستمع لتغيير العملة
+    document.getElementById('currency').addEventListener('change', convertCurrency);
+};
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
