@@ -1,0 +1,26 @@
+/* تنسيق الزر المفضلتي */
+.favorite-button {
+    display: inline-block; /* لتنسيق الزر بشكل جميل */
+    padding: 10px 20px; /* ضبط المسافات الداخلية */
+    background-color: #ff5733; /* لون الخلفية */
+    color: #fff; /* لون النص */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* تقويس الزوايا */
+    font-size: 16px; /* حجم النص */
+    font-weight: bold; /* جعل النص ثقيل */
+    text-align: center; /* محاذاة النص في المنتصف */
+    cursor: pointer; /* مؤشر الفأرة عند المرور بالزر */
+    transition: background-color 0.3s ease-in-out; /* تأثير التغيير في الخلفية */
+}
+
+.favorite-button.active {
+    background-color: #1ce54b; /* اللون الأخضر عند الضغط */
+    color: #fff; /* اللون الأبيض للنص */
+}
+
+.favorite-button:hover {
+    background-color: #244d31; /* لون الخلفية عند التمرير فوق الزر */
+}
+.favorite-button:focus {
+    background-color: #06e34c; /* لون الخلفية عند التمرير فوق الزر */
+}

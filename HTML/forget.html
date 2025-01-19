@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استعادة كلمة المرور</title>
+    <style>
+        body {
+            background-color: #1f2029;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .reset-container {
+            background-color: #2c2e3a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .reset-container h2 {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .reset-container .input-group {
+            position: relative;
+        }
+
+        .reset-container .input-group input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background-color: #040f1b;
+            color: #fff;
+        }
+
+        .reset-container input:focus {
+            outline: none;
+            border: 2px solid #007bff;
+        }
+
+        .reset-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffeba7;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .reset-container button:hover {
+            background-color: #102770;
+        }
+
+        .reset-container p {
+            margin-top: 20px;
+            color: #f5f4f4;
+            font-size: 14px;
+        }
+
+        .reset-container i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30px;
+            height: 44px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: #ffeba7;
+            color: #102770;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(255, 235, 167, 0.2);
+            transition: all 200ms linear;
+        }
+
+        .btn:hover {
+            background-color: #102770;
+            color: #ffeba7;
+            box-shadow: 0 8px 24px rgba(16, 39, 112, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reset-container">
+        <fieldset>
+            <legend>
+                <h2><i class="fas fa-lock"></i> استعادة كلمة المرور</h2>
+            </legend>
+            <form id="resetForm">
+                <!-- إدخال البريد الإلكتروني -->
+                <div class="input-group">
+                    <input type="email" name="email" id="email" placeholder="بريدك الإلكتروني" required>
+                </div>
+
+                <!-- إدخال كلمة المرور الجديدة (مخفية افتراضيًا) -->
+                <div class="input-group" id="newPasswordGroup" style="visibility: hidden; position: absolute;">
+                    <input type="password" name="new_password" id="new-password" placeholder="كلمة المرور الجديدة" required>
+                </div>
+
+                <!-- زر الإرسال -->
+                <button type="submit" class="btn mt-4">تحقق من البريد</button>
+                <p><a href="./login.html" style="color: rgb(242 243 245);">انتقل لصفحة تسجيل الدخول</a></p>
+            </form>
+        </fieldset>
+    </div>
+
+    <script>
+        const form = document.getElementById("resetForm");
+        const newPasswordGroup = document.getElementById("newPasswordGroup");
+        const emailInput = document.getElementById("email");
+        const newPasswordInput = document.getElementById("new-password");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // استرداد بيانات المستخدمين من localStorage
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const email = emailInput.value.trim();
+            const userIndex = users.findIndex(user => user.email === email);
+
+            if (newPasswordGroup.style.visibility === "hidden") {
+                // التحقق من البريد الإلكتروني
+                if (userIndex !== -1) {
+                    alert("تم العثور على الحساب. يمكنك الآن إعادة تعيين كلمة المرور.");
+                    newPasswordGroup.style.visibility = "visible";
+                    newPasswordGroup.style.position = "static"; // إظهار حقل كلمة المرور الجديدة
+                    emailInput.disabled = true; // تعطيل إدخال البريد الإلكتروني
+                    form.querySelector("button").innerText = "إعادة تعيين كلمة المرور"; // تغيير نص الزر
+                } else {
+                    alert("عذرًا، هذا البريد الإلكتروني غير مسجل.");
+                }
+            } else {
+                // إعادة تعيين كلمة المرور
+                const newPassword = newPasswordInput.value.trim();
+                if (newPassword.length >= 6) {
+                    users[userIndex].password = newPassword; // تحديث كلمة المرور
+                    localStorage.setItem("users", JSON.stringify(users)); // حفظ التحديث
+                    alert("تم إعادة تعيين كلمة المرور بنجاح! يمكنك الآن تسجيل الدخول.");
+                    window.location.href = "./login.html"; // إعادة التوجيه
+                } else {
+                    alert("يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل.");
+                }
+            }
+        });
+    </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" defer></script>
+</body>
+
+</html>

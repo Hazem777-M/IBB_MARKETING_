@@ -1,0 +1,373 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    line-height: 1.6;
+    background-color: #f4f5f7;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+.main{
+
+    background-color: #f7e1c6; /* لون خلفي في حال لم تظهر الصورة */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+header a img {
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+
+header a img:hover {
+    transform: scale(1.1);
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #4a90e2, #c2c2c2);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #232d3d;
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+/* Section List */
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #383535;
+    padding-left: 25px;
+    position: relative;
+    font-weight: bold;
+}
+
+.section ul li:before { 
+    position: absolute;
+    left: 0;
+    color: #4a90e2;
+    font-size: 1.5rem;
+}
+
+/* قسم الفيديوهات */
+.videos {
+    padding: 40px 20px;
+    background-color: #f7e1c6;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+ 
+}
+/* ==========================  video ======================--*/
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #bfcbd8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 34, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 360px; /* عرض الفيديو مع التنسيق */
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.video-item video {
+    width: 100%; /* ضبط الفيديو ليتناسب مع العرض */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.video-item h5 {
+    font-size: 18px;
+    color: #232d3d;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+/*============================================================================-/*
+
+/* Call to Action (CTA) */
+.cta {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #4a90e2, #c2c2c2);
+    color: #0aa8cf;
+    font-size: 20px;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.cta:hover {
+    background: linear-gradient(135deg, #386e98, #c2c2c2);
+}
+
+.cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #181c26;
+}
+
+.cta a {
+    margin-top: 10px;
+    background: #ffffff;
+    display: inline-block;
+    padding: 12px 25px;
+    color: #060606;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta a:hover {
+    background: #756fec;
+    color: #fff;
+}
+
+/* Team Section */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    width: 315px;
+    background: linear-gradient(135deg, #4a90e2, #c2c2c2);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Picture */
+.profile-pic {
+    margin-top: 30px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #2563eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.card:hover .profile-pic img {
+    transform: scale(1.15);
+}
+
+/* Card Content */
+.card .content {
+    padding: 20px;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    color: #1a1930;
+    margin-bottom: 10px;
+    
+}
+
+.card p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #2f4753;
+}
+
+/* Social Icons */
+.card .social-icons {
+    margin-bottom: 15px;
+    
+}
+
+.card .social-icons i {
+  
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #6c63ff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card .social-icons i:hover {
+    color: #48b1f3;
+}
+
+/* Contact Button */
+.card .contact-btn {
+    padding: 12px 18px;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card .contact-btn:hover {
+    background: #48b1f3;
+    transform: translateY(-3px);
+}
+
+/* Teacher Section */
+.tetcher {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #4a90e2, #c2c2c2);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tetcher h2 {
+    font-size: 1.8em;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .team {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .cta a {
+        padding: 10px 20px;
+    }
+
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section h2 {
+        font-size: 1.6rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    .cta h2 {
+        font-size: 1.4rem;
+    }
+
+    .cta a {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .team {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 22px; /* تحويل 1.4rem إلى بكسل */
+    }
+
+    .section p {
+        font-size: 14px; /* تحويل 0.9rem إلى بكسل */
+    }
+
+    .cta h2 {
+        font-size: 19px; /* تحويل 1.2rem إلى بكسل */
+    }
+
+    .cta a {
+        padding: 8px 15px;
+        font-size: 14px; /* تحويل 0.9rem إلى بكسل */
+    }
+
+    .card h2 {
+        font-size: 18px; /* تحويل 1.1rem إلى بكسل */
+    }         
+
+    .card p {
+        font-size: 14px; /* تحويل 0.9rem إلى بكسل */
+    }
+}
+

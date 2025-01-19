@@ -1,0 +1,50 @@
+body{
+  background:linear-gradient(135deg,#c1cfdc,#2c3e50);  
+}
+.location 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  
+}
+.location 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.location div {
+    background:linear-gradient(135deg,#2d2d2d,#606569);  
+    direction: rtl;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #000b71;
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(50% - 20px); /* عرض النصوص بجانب الصور مع الحفاظ على التخطيط */
+   box-sizing: border-box;
+}
+
+.location div img {
+    width: 100px; /* حجم الصورة */
+    height: auto;
+    border-radius: 5px;
+  }
+
+.location div h5, .location div h4, .location div p {
+    margin: 5px 0;
+  }
+.location div:hover {
+    transition: all 0.3s ease-in-out; /* تأثيرات انتقال سلس */
+    border: 5px solid rgba(0, 69, 88, 0.916);
+    background-color: rgba(0, 69, 88, 0.1); /* تغيير لون الخلفية عند التمرير */
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+    color: #371a98; /* تغيير لون النص */
+    box-shadow: 0 4px 10px rgba(223, 71, 71, 0.2); /* إضافة ظل أنيق */
+}

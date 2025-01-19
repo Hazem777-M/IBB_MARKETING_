@@ -1,0 +1,19 @@
+.moving_h4 h4 {
+font-size: 36px; /* حجم النص */
+color: #e8e6e6; /* لون النص */
+animation: moveHeader 4s ease-in-out infinite; /* مدة الحركة ونمط التكرار */
+text-align: center;
+}
+
+/* تعريف الحركة */
+@keyframes moveHeader {
+0% {
+  transform: translateX(0); /* النص في موضعه الأصلي */
+}
+50% {
+  transform: translateY(50%); /* تحرك النص إلى اليسار */
+}
+100% {
+  transform: translateX(0); /* عودة النص إلى الموضع الأصلي */
+}
+}

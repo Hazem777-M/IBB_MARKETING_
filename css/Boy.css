@@ -1,0 +1,37 @@
+/* الشريط نفسه */
+.nav-bar2 {
+    background-color: #2c3e50; /* لون خلفية الشريط */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل لطيف */
+}
+
+/* قائمة العناصر */
+.nav-list {
+    list-style-type: none; /* إزالة النقاط */
+    margin: 0;
+    padding: 0;
+    display: flex; /* تنسيق العناصر بجانب بعضها */
+    justify-content: center; /* توسيط العناصر */
+}
+
+/* العناصر الفردية */
+.nav-list li {
+    margin: 0 15px; /* مسافة بين العناصر */
+}
+
+/* الروابط */
+.nav-list a {
+    text-decoration: none; /* إزالة الخط السفلي */
+    color: #ecf0f1; /* لون النص */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: all 0.3s ease; /* تأثير عند التمرير */
+    border-radius: 5px;
+}
+
+/* تأثير عند التمرير فوق الرابط */
+.nav-list a:hover {
+    background-color: #3498db; /* لون الخلفية عند التمرير */
+    color: #fff; /* لون النص عند التمرير */
+}

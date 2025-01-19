@@ -1,0 +1,110 @@
+.stardust,
+.cosmic-ring,
+.starfield,
+.nebula {
+    max-height: 70px;
+    max-width: 314px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: 12px;
+    filter: blur(3px);
+}
+
+.input {
+    background-color: #ffffff;
+    border: none;
+    width: 207px;
+    height: 56px;
+    border-radius: 10px;
+    color: #000000;
+    padding-inline: 59px;
+    font-size: 18px;
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input::placeholder {
+    color: #4c4444;
+}
+
+.input:focus {
+    outline: none;
+}
+
+#main:focus-within>#input-mask {
+    display: none;
+}
+/*حقل الادخال*/
+#input-mask {
+    pointer-events: none;
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    top: 18px;
+    left: 70px;
+}
+
+#main:hover>#cosmic-glow {
+    opacity: 0;
+}
+
+#wormhole-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    max-height: 40px;
+    max-width: 38px;
+    height: 100%;
+    width: 100%;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #1c2452, #05071b, #2a3875);
+    border: 1px solid transparent;
+}
+
+.wormhole-border {
+    height: 42px;
+    width: 40px;
+    position: absolute;
+    overflow: hidden;
+    top: 7px;
+    right: 7px;
+    border-radius: 10px;
+}
+#main {
+    position: relative;
+}
+
+#search-icon {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+@keyframes rotate {
+    100% {
+        transform: translate(-50%, -50%) rotate(450deg);
+    }
+}
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

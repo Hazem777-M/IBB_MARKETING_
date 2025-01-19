@@ -1,0 +1,107 @@
+body {
+    background-color: #1f2029;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.reset-container {
+    background-color: #2c2e3a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    color: #fff;
+}
+
+.reset-container h2 {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.reset-container .input-group {
+    position: relative;
+
+}
+
+.reset-container .input-group input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background-color: #040f1b;
+}
+
+.reset-container input:focus {
+    outline: none;
+    border: 2px solid #007bff;
+}
+
+.reset-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reset-container button:hover {
+    background-color: #040f1b;
+}
+
+.reset-container p {
+    margin-top: 20px;
+    color: #f5f4f4;
+    font-size: 14px;
+}
+
+.reset-container i {
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.message.success {
+    color: #28a745;
+}
+
+.message.error {
+    color: #ff6666;
+}
+/* btn */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    height: 44px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #ffeba7;
+    color: #102770;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(255, 235, 167, 0.2);
+    transition: all 200ms linear;
+}
+.btn:hover {
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px rgba(16, 39, 112, 0.2);
+}
+

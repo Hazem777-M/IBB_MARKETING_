@@ -1,0 +1,51 @@
+
+/* تنسيق الحاوية الرئيسية */
+.company-logos {
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;   
+}
+
+/* تنسيق الصور داخل الحاوية */
+.logos-wrapper {
+    display: flex;
+    gap: 30px;
+    animation: moveLogos 50s linear infinite;
+}
+
+.logos-wrapper img {
+    height: 158px;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+   
+}
+.pl{
+    justify-content: center;
+}
+.pl p{
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.logos-wrapper img:hover {
+    transform: scale(1.2); /* تكبير الصورة عند التمرير */
+}
+
+/* تحريك الصور من اليمين إلى اليسار والعودة */
+@keyframes moveLogos {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
